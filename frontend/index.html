@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frontend + Backend con Vercel</title>
+</head>
+<body>
+  <h1>Frontend conectado a Backend</h1>
+
+  <button onclick="llamarBackend()">Llamar Backend</button>
+
+  <p id="respuesta"></p>
+
+  <script>
+    async function llamarBackend() {
+      const res = await fetch("/api/hello");
+      const data = await res.json();
+      document.getElementById("respuesta").textContent = data.mensaje;
+    }
+  </script>
+</body>
+</html>
